@@ -1,5 +1,5 @@
 
-     Program QE-CONVERSE v.7.2 starts on 14Nov2024 at 10:47:19 
+     Program QE-CONVERSE v.7.2 starts on 22Nov2024 at 14:34:29 
 
      This program is part of the open-source Quantum ESPRESSO suite
      for quantum simulation of materials; please cite
@@ -14,7 +14,7 @@
 
      MPI processes distributed on     1 nodes
      R & G space division:  proc/nbgrp/npool/nimage =       6
-     4535 MiB available memory on the printing compute node when the environment starts
+     5717 MiB available memory on the printing compute node when the environment starts
 
 
      Reading xml data from directory:
@@ -31,9 +31,9 @@
      Parallelization info
      --------------------
      sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
-     Min         341     341     85                 7585     7585     947
-     Max         342     342     86                 7587     7587     949
-     Sum        2049    2049    515                45515    45515    5691
+     Min         450     450    112                28608    28608    3580
+     Max         451     451    113                28613    28613    3583
+     Sum        2703    2703    675               171661   171661   21485
 
      Using Slab Decomposition
 
@@ -76,9 +76,9 @@
 
 
 
-     bravais-lattice index     =          -12
-     lattice parameter (alat)  =       9.6103  a.u.
-     unit-cell volume          =    2050.8269 (a.u.)^3
+     bravais-lattice index     =            8
+     lattice parameter (alat)  =      13.3897  a.u.
+     unit-cell volume          =    7730.1447 (a.u.)^3
      number of atoms/cell      =            2
      number of atomic types    =            2
      number of electrons       =         9.00 (up:   5.00, down:   4.00)
@@ -91,18 +91,18 @@
      Exchange-correlation= PBE
                            (   1   4   3   4   0   0   0)
 
-     celldm(1)=   9.610259  celldm(2)=   2.320682  celldm(3)=   1.073642
-     celldm(4)=   0.000000  celldm(5)=  -0.374170  celldm(6)=   0.000000
+     celldm(1)=  13.389711  celldm(2)=   1.577890  celldm(3)=   2.040785
+     celldm(4)=   0.000000  celldm(5)=   0.000000  celldm(6)=   0.000000
 
      crystal axes: (cart. coord. in units of alat)
                a(1) = (   1.000000   0.000000   0.000000 )  
-               a(2) = (   0.000000   2.320682   0.000000 )  
-               a(3) = (  -0.401725   0.000000   0.995653 )  
+               a(2) = (   0.000000   1.577890   0.000000 )  
+               a(3) = (   0.000000   0.000000   2.040785 )  
 
      reciprocal axes: (cart. coord. in units 2 pi/alat)
-               b(1) = (  1.000000 -0.000000  0.403479 )  
-               b(2) = (  0.000000  0.430908 -0.000000 )  
-               b(3) = (  0.000000  0.000000  1.004366 )  
+               b(1) = (  1.000000  0.000000  0.000000 )  
+               b(2) = (  0.000000  0.633758  0.000000 )  
+               b(3) = (  0.000000  0.000000  0.490008 )  
 
 
      PseudoPot. # 1 for O  read from file:
@@ -161,14 +161,14 @@ A      1.00
    Cartesian axes
 
      site n.     atom                  positions (alat units)
-         1           O   tau(   1) = (   0.0000000   0.0000000  -0.0001677  )
-         2           C   tau(   2) = (   0.0000000   0.0000000   0.2219735  )
+         1           O   tau(   1) = (   0.0000000   0.0000000  -0.0001204  )
+         2           C   tau(   2) = (   0.0000000   0.0000000   0.1593181  )
 
    Crystallographic axes
 
      site n.     atom                  positions (cryst. coord.)
-         1           O   tau(   1) = ( -0.0000677  0.0000000 -0.0001685  )
-         2           C   tau(   2) = (  0.0895616  0.0000000  0.2229427  )
+         1           O   tau(   1) = (  0.0000000  0.0000000 -0.0000590  )
+         2           C   tau(   2) = (  0.0000000  0.0000000  0.0780671  )
 
      number of k points=     1
                        cart. coord. in units 2pi/alat
@@ -177,13 +177,13 @@ A      1.00
                        cryst. coord.
         k(    1) = (   0.0000000   0.0000000   0.0000000), wk =   1.0000000
 
-     Dense  grid:    45515 G-vectors     FFT dimensions: (  36,  80,  36)
+     Dense  grid:   171661 G-vectors     FFT dimensions: (  48,  75,  96)
 
      Initial potential from superposition of free atoms
 
      starting charge      10.0000, renormalised to       9.0000
 
-     negative rho (up, down):  1.488E-02 1.488E-02
+     negative rho (up, down):  4.212E-02 4.212E-02
      Starting wfcs are   16 atomic wfcs
 
      Self-consistent Calculation
@@ -192,17 +192,17 @@ A      1.00
      Davidson diagonalization with overlap 
 
 ---- Real-time Memory Report at c_bands before calling an iterative solver
-            36 MiB given to the printing process from OS
+            54 MiB given to the printing process from OS
              0 MiB allocation reported by mallinfo(arena+hblkhd)
-          4478 MiB available memory on the node where the printing process lives
+          5567 MiB available memory on the node where the printing process lives
 ------------------
      ethr =  1.00E-08,  avg # of iterations =  8.0
 
-     negative rho (up, down):  7.119E-03 7.210E-03
+     negative rho (up, down):  2.063E-02 2.071E-02
 
-     total energy              =     -41.41662043 Ry
-     Harris-Foulkes estimate   =     -41.93448227 Ry
-     estimated scf accuracy    <       0.94508041 Ry
+     total energy              =     -41.34851434 Ry
+     Harris-Foulkes estimate   =     -41.89444071 Ry
+     estimated scf accuracy    <       0.98418955 Ry
 
      total magnetization       =     1.00 Bohr mag/cell
      absolute magnetization    =     1.00 Bohr mag/cell
@@ -211,17 +211,17 @@ A      1.00
      Davidson diagonalization with overlap 
 
 ---- Real-time Memory Report at c_bands before calling an iterative solver
-            40 MiB given to the printing process from OS
+            66 MiB given to the printing process from OS
              0 MiB allocation reported by mallinfo(arena+hblkhd)
-          4464 MiB available memory on the node where the printing process lives
+          5479 MiB available memory on the node where the printing process lives
 ------------------
      ethr =  1.00E-02,  avg # of iterations =  3.0
 
-     negative rho (up, down):  5.210E-03 5.310E-03
+     negative rho (up, down):  1.552E-02 1.561E-02
 
-     total energy              =     -41.49386498 Ry
-     Harris-Foulkes estimate   =     -41.83317407 Ry
-     estimated scf accuracy    <       0.92859069 Ry
+     total energy              =     -41.40541693 Ry
+     Harris-Foulkes estimate   =     -41.80595290 Ry
+     estimated scf accuracy    <       1.12523334 Ry
 
      total magnetization       =     1.00 Bohr mag/cell
      absolute magnetization    =     1.05 Bohr mag/cell
@@ -230,17 +230,17 @@ A      1.00
      Davidson diagonalization with overlap 
 
 ---- Real-time Memory Report at c_bands before calling an iterative solver
-            40 MiB given to the printing process from OS
+            67 MiB given to the printing process from OS
              0 MiB allocation reported by mallinfo(arena+hblkhd)
-          4461 MiB available memory on the node where the printing process lives
+          5469 MiB available memory on the node where the printing process lives
 ------------------
-     ethr =  1.00E-02,  avg # of iterations =  2.0
+     ethr =  1.00E-02,  avg # of iterations =  3.0
 
-     negative rho (up, down):  1.468E-03 1.537E-03
+     negative rho (up, down):  4.553E-03 4.640E-03
 
-     total energy              =     -41.68732107 Ry
-     Harris-Foulkes estimate   =     -41.69863094 Ry
-     estimated scf accuracy    <       0.06977976 Ry
+     total energy              =     -41.63510872 Ry
+     Harris-Foulkes estimate   =     -41.65139219 Ry
+     estimated scf accuracy    <       0.08538491 Ry
 
      total magnetization       =     1.00 Bohr mag/cell
      absolute magnetization    =     1.04 Bohr mag/cell
@@ -249,125 +249,131 @@ A      1.00
      Davidson diagonalization with overlap 
 
 ---- Real-time Memory Report at c_bands before calling an iterative solver
-            41 MiB given to the printing process from OS
+            69 MiB given to the printing process from OS
              0 MiB allocation reported by mallinfo(arena+hblkhd)
-          4458 MiB available memory on the node where the printing process lives
+          5454 MiB available memory on the node where the printing process lives
 ------------------
-     ethr =  7.75E-04,  avg # of iterations =  2.0
+     ethr =  9.49E-04,  avg # of iterations =  1.5
 
-     negative rho (up, down):  3.623E-04 3.937E-04
+     negative rho (up, down):  1.149E-03 1.192E-03
 
-     total energy              =     -41.69816608 Ry
-     Harris-Foulkes estimate   =     -41.69672511 Ry
-     estimated scf accuracy    <       0.00498427 Ry
+     total energy              =     -41.64769919 Ry
+     Harris-Foulkes estimate   =     -41.64552361 Ry
+     estimated scf accuracy    <       0.00503304 Ry
 
      total magnetization       =     1.00 Bohr mag/cell
-     absolute magnetization    =     1.08 Bohr mag/cell
+     absolute magnetization    =     1.12 Bohr mag/cell
 
      iteration #  5     ecut=    30.00 Ry     beta= 0.50
      Davidson diagonalization with overlap 
 
 ---- Real-time Memory Report at c_bands before calling an iterative solver
-            42 MiB given to the printing process from OS
+            71 MiB given to the printing process from OS
              0 MiB allocation reported by mallinfo(arena+hblkhd)
-          4455 MiB available memory on the node where the printing process lives
+          5446 MiB available memory on the node where the printing process lives
 ------------------
-     ethr =  5.54E-05,  avg # of iterations =  3.5
+     ethr =  5.59E-05,  avg # of iterations =  3.5
 
-     negative rho (up, down):  3.877E-07 5.780E-07
+     negative rho (up, down):  8.188E-05 9.781E-05
 
-     total energy              =     -41.70123643 Ry
-     Harris-Foulkes estimate   =     -41.70094479 Ry
-     estimated scf accuracy    <       0.00208907 Ry
+     total energy              =     -41.65040529 Ry
+     Harris-Foulkes estimate   =     -41.65037239 Ry
+     estimated scf accuracy    <       0.00221340 Ry
 
      total magnetization       =     1.00 Bohr mag/cell
-     absolute magnetization    =     1.12 Bohr mag/cell
+     absolute magnetization    =     1.14 Bohr mag/cell
 
      iteration #  6     ecut=    30.00 Ry     beta= 0.50
      Davidson diagonalization with overlap 
 
 ---- Real-time Memory Report at c_bands before calling an iterative solver
-            42 MiB given to the printing process from OS
+            73 MiB given to the printing process from OS
              0 MiB allocation reported by mallinfo(arena+hblkhd)
-          4452 MiB available memory on the node where the printing process lives
+          5438 MiB available memory on the node where the printing process lives
 ------------------
-     ethr =  2.32E-05,  avg # of iterations =  2.0
+     ethr =  2.46E-05,  avg # of iterations =  1.5
 
-     negative rho (up, down):  3.284E-07 4.801E-07
+     negative rho (up, down):  9.558E-06 1.279E-05
 
-     total energy              =     -41.70155657 Ry
-     Harris-Foulkes estimate   =     -41.70147388 Ry
-     estimated scf accuracy    <       0.00030643 Ry
+     total energy              =     -41.65058508 Ry
+     Harris-Foulkes estimate   =     -41.65065940 Ry
+     estimated scf accuracy    <       0.00031419 Ry
 
      total magnetization       =     1.00 Bohr mag/cell
-     absolute magnetization    =     1.14 Bohr mag/cell
+     absolute magnetization    =     1.16 Bohr mag/cell
 
      iteration #  7     ecut=    30.00 Ry     beta= 0.50
      Davidson diagonalization with overlap 
 
 ---- Real-time Memory Report at c_bands before calling an iterative solver
-            42 MiB given to the printing process from OS
+            74 MiB given to the printing process from OS
              0 MiB allocation reported by mallinfo(arena+hblkhd)
-          4450 MiB available memory on the node where the printing process lives
+          5423 MiB available memory on the node where the printing process lives
 ------------------
-     ethr =  3.40E-06,  avg # of iterations =  2.0
+     ethr =  3.49E-06,  avg # of iterations =  2.5
 
-     negative rho (up, down):  2.336E-07 4.044E-07
+     negative rho (up, down):  8.856E-06 1.183E-05
 
-     total energy              =     -41.70170485 Ry
-     Harris-Foulkes estimate   =     -41.70168508 Ry
-     estimated scf accuracy    <       0.00004572 Ry
+     total energy              =     -41.65071735 Ry
+     Harris-Foulkes estimate   =     -41.65076575 Ry
+     estimated scf accuracy    <       0.00019222 Ry
 
      total magnetization       =     1.00 Bohr mag/cell
-     absolute magnetization    =     1.16 Bohr mag/cell
+     absolute magnetization    =     1.17 Bohr mag/cell
 
      iteration #  8     ecut=    30.00 Ry     beta= 0.50
      Davidson diagonalization with overlap 
 
 ---- Real-time Memory Report at c_bands before calling an iterative solver
-            43 MiB given to the printing process from OS
+            76 MiB given to the printing process from OS
              0 MiB allocation reported by mallinfo(arena+hblkhd)
-          4447 MiB available memory on the node where the printing process lives
+          5412 MiB available memory on the node where the printing process lives
 ------------------
-     ethr =  5.08E-07,  avg # of iterations =  3.0
+     ethr =  2.14E-06,  avg # of iterations =  2.0
 
-     total energy              =     -41.70176269 Ry
-     Harris-Foulkes estimate   =     -41.70176189 Ry
-     estimated scf accuracy    <       0.00000290 Ry
+     negative rho (up, down):  2.571E-06 3.686E-06
+
+     total energy              =     -41.65075457 Ry
+     Harris-Foulkes estimate   =     -41.65075123 Ry
+     estimated scf accuracy    <       0.00000870 Ry
 
      total magnetization       =     1.00 Bohr mag/cell
-     absolute magnetization    =     1.19 Bohr mag/cell
+     absolute magnetization    =     1.18 Bohr mag/cell
 
      iteration #  9     ecut=    30.00 Ry     beta= 0.50
      Davidson diagonalization with overlap 
 
 ---- Real-time Memory Report at c_bands before calling an iterative solver
-            43 MiB given to the printing process from OS
+            78 MiB given to the printing process from OS
              0 MiB allocation reported by mallinfo(arena+hblkhd)
-          4444 MiB available memory on the node where the printing process lives
+          5406 MiB available memory on the node where the printing process lives
 ------------------
-     ethr =  3.22E-08,  avg # of iterations =  3.0
+     ethr =  9.67E-08,  avg # of iterations =  2.5
 
-     total energy              =     -41.70176467 Ry
-     Harris-Foulkes estimate   =     -41.70176414 Ry
-     estimated scf accuracy    <       0.00000046 Ry
+     negative rho (up, down):  9.122E-09 2.259E-08
+
+     total energy              =     -41.65075840 Ry
+     Harris-Foulkes estimate   =     -41.65075697 Ry
+     estimated scf accuracy    <       0.00000144 Ry
 
      total magnetization       =     1.00 Bohr mag/cell
-     absolute magnetization    =     1.19 Bohr mag/cell
+     absolute magnetization    =     1.18 Bohr mag/cell
 
      iteration # 10     ecut=    30.00 Ry     beta= 0.50
      Davidson diagonalization with overlap 
 
 ---- Real-time Memory Report at c_bands before calling an iterative solver
-            44 MiB given to the printing process from OS
+            80 MiB given to the printing process from OS
              0 MiB allocation reported by mallinfo(arena+hblkhd)
-          4442 MiB available memory on the node where the printing process lives
+          5396 MiB available memory on the node where the printing process lives
 ------------------
-     ethr =  5.06E-09,  avg # of iterations =  3.5
+     ethr =  1.60E-08,  avg # of iterations =  3.0
 
-     total energy              =     -41.70176496 Ry
-     Harris-Foulkes estimate   =     -41.70176513 Ry
-     estimated scf accuracy    <       0.00000060 Ry
+     negative rho (up, down):  5.538E-09 1.011E-08
+
+     total energy              =     -41.65075916 Ry
+     Harris-Foulkes estimate   =     -41.65075938 Ry
+     estimated scf accuracy    <       0.00000082 Ry
 
      total magnetization       =     1.00 Bohr mag/cell
      absolute magnetization    =     1.19 Bohr mag/cell
@@ -376,20 +382,37 @@ A      1.00
      Davidson diagonalization with overlap 
 
 ---- Real-time Memory Report at c_bands before calling an iterative solver
-            44 MiB given to the printing process from OS
+            80 MiB given to the printing process from OS
              0 MiB allocation reported by mallinfo(arena+hblkhd)
-          4441 MiB available memory on the node where the printing process lives
+          5391 MiB available memory on the node where the printing process lives
 ------------------
-     ethr =  5.06E-09,  avg # of iterations =  2.0
+     ethr =  9.14E-09,  avg # of iterations =  2.0
+
+     total energy              =     -41.65075955 Ry
+     Harris-Foulkes estimate   =     -41.65075960 Ry
+     estimated scf accuracy    <       0.00000016 Ry
+
+     total magnetization       =     1.00 Bohr mag/cell
+     absolute magnetization    =     1.19 Bohr mag/cell
+
+     iteration # 12     ecut=    30.00 Ry     beta= 0.50
+     Davidson diagonalization with overlap 
+
+---- Real-time Memory Report at c_bands before calling an iterative solver
+            80 MiB given to the printing process from OS
+             0 MiB allocation reported by mallinfo(arena+hblkhd)
+          5391 MiB available memory on the node where the printing process lives
+------------------
+     ethr =  1.77E-09,  avg # of iterations =  2.0
 
      End of self-consistent calculation
 
  ------ SPIN UP ------------
 
 
-          k = 0.0000 0.0000 0.0000 (  5691 PWs)   bands (ev):
+          k = 0.0000 0.0000 0.0000 ( 21485 PWs)   bands (ev):
 
-   -36.8021 -20.5734 -17.3294 -17.2278 -17.1513
+   -37.8070 -21.4842 -18.2650 -18.2377 -18.0264
 
      occupation numbers 
      1.0000   1.0000   1.0000   1.0000   1.0000
@@ -397,99 +420,99 @@ A      1.00
  ------ SPIN DOWN ----------
 
 
-          k = 0.0000 0.0000 0.0000 (  5691 PWs)   bands (ev):
+          k = 0.0000 0.0000 0.0000 ( 21485 PWs)   bands (ev):
 
-   -36.6595 -19.7583 -17.1014 -17.0023 -13.1252
+   -37.6524 -20.6468 -18.0354 -18.0074 -13.9947
 
      occupation numbers 
      1.0000   1.0000   1.0000   1.0000   0.0000
 
-     highest occupied, lowest unoccupied level (ev):   -17.0023  -13.1252
+     highest occupied, lowest unoccupied level (ev):   -18.0074  -13.9947
 
-!    total energy              =     -41.70176511 Ry
-     Harris-Foulkes estimate   =     -41.70176511 Ry
-     estimated scf accuracy    <          9.9E-09 Ry
+!    total energy              =     -41.65075960 Ry
+     Harris-Foulkes estimate   =     -41.65075959 Ry
+     estimated scf accuracy    <          4.4E-09 Ry
 
      The total energy is the sum of the following terms:
-     one-electron contribution =     -77.32166751 Ry
-     hartree contribution      =      37.36357226 Ry
-     xc contribution           =      -9.31237139 Ry
-     ewald contribution        =       7.56870153 Ry
+     one-electron contribution =     -81.82961281 Ry
+     hartree contribution      =      39.30563518 Ry
+     xc contribution           =      -9.31597535 Ry
+     ewald contribution        =      10.18919339 Ry
 
      total magnetization       =     1.00 Bohr mag/cell
      absolute magnetization    =     1.19 Bohr mag/cell
 
-     convergence has been achieved in  11 iterations
+     convergence has been achieved in  12 iterations
      Computing du/dk (single point)
      k-point:   1    occ=  5
      k-point:   2    occ=  4
      done with du/dk   q_gipaw = 0.010000
 
      Computing the orbital magnetization (bohr mag/cell):
-BC: k-point:    1  pool:   1       -0.000000    0.000000    0.000003
-LC: k-point:    1  pool:   1        0.000002    0.000000    0.000019
-IC: k-point:    1  pool:   1        0.000421   -0.000000    0.000075
-BC: k-point:    2  pool:   1        0.000000   -0.000000   -0.000002
-LC: k-point:    2  pool:   1       -0.000002   -0.000000   -0.000026
-IC: k-point:    2  pool:   1        0.000080    0.000000    0.036461
+BC: k-point:    1  pool:   1       -0.000000   -0.000000    0.000002
+LC: k-point:    1  pool:   1        0.000000   -0.000000    0.000007
+IC: k-point:    1  pool:   1       -0.000000    0.000000    0.000116
+BC: k-point:    2  pool:   1        0.000000    0.000000   -0.000002
+LC: k-point:    2  pool:   1        0.000000   -0.000000   -0.000017
+IC: k-point:    2  pool:   1       -0.000000    0.000000    0.137733
 
      SPIN-ORBIT:
      lambda_so          =       0.000000      0.000000      1.000000
 
-     Berry curvature    =      -0.000000      0.000000      0.000000
-     Fermi energy       =      -1.255122 rydberg
+     Berry curvature    =      -0.000000     -0.000000      0.000000
+     Fermi energy       =      -1.324219 rydberg
 
      NUCLEAR DIPOLE ON ATOM   1:
      m_0                =       0.000000      0.000000      0.000000
 
      (without Berry curvature term)
-     M_LC               =       0.000001      0.000000     -0.000013
-     M_IC               =       0.000001     -0.000000     -0.000005
-     Delta_M_bare       =       0.000000      0.000000      0.000014
-     Delta_M_para       =      -0.000000     -0.000000     -0.000004
+     M_LC               =       0.000000     -0.000000     -0.000020
+     M_IC               =       0.000000     -0.000000      0.000019
+     Delta_M_bare       =      -0.000000     -0.000000      0.000013
+     Delta_M_para       =       0.000000     -0.000000     -0.000004
      Delta_M_dia        =       0.000000      0.000000      0.000008
-     M_tot              =       0.000003      0.000000     -0.000000
+     M_tot              =      -0.000000     -0.000000      0.000017
 
      (with Berry curvature term)
-     M_LC               =       0.000001      0.000000     -0.000013
-     M_IC               =       0.000001     -0.000000     -0.000005
-     Delta_M            =       0.000000      0.000000      0.000018
-     M_tot              =       0.000003      0.000000      0.000000
+     M_LC               =       0.000000     -0.000000     -0.000020
+     M_IC               =       0.000000     -0.000000      0.000019
+     Delta_M            =      -0.000000     -0.000000      0.000018
+     M_tot              =      -0.000000     -0.000000      0.000017
 
      SPIN-ORBIT:
      lambda_so          =       0.000000      0.000000      1.000000
      unpaired electrons =          1
      Contributions to the g-tensor (ppm):
-     delta_g RMC        =      -118.7745
-     delta_g RMC(GIPAW) =       -59.5812
-     delta_g SO         =         2.7094        0.0000        0.0289
+     delta_g RMC        =      -121.4428
+     delta_g RMC(GIPAW) =       -59.6173
+     delta_g SO         =        -0.0000       -0.0000       17.2517
 
-     delta_g total      =         2.7094        0.0000     -178.3267
+     delta_g total      =        -0.0000       -0.0000     -163.8085
 
-     QE-CONVERSE  :      1.32s CPU      1.43s WALL
+     QE-CONVERSE  :      5.81s CPU      6.07s WALL
 
 
-   This run was terminated on:  10:47:20  14Nov2024            
+   This run was terminated on:  14:34:35  22Nov2024            
 
 =------------------------------------------------------------------------------=
    JOB DONE.
 =------------------------------------------------------------------------------=
      Initialization:
 
-     read_file    :      0.29s CPU      0.31s WALL (       1 calls)
-     gipaw_setup  :      0.01s CPU      0.02s WALL (       1 calls)
-     wfcinit      :      0.03s CPU      0.03s WALL (       1 calls)
-     hinit0       :      0.10s CPU      0.10s WALL (       1 calls)
-     potinit      :      0.18s CPU      0.18s WALL (       1 calls)
+     read_file    :      0.40s CPU      0.43s WALL (       1 calls)
+     gipaw_setup  :      0.02s CPU      0.02s WALL (       1 calls)
+     wfcinit      :      0.23s CPU      0.24s WALL (       1 calls)
+     hinit0       :      0.19s CPU      0.19s WALL (       1 calls)
+     potinit      :      0.40s CPU      0.41s WALL (       1 calls)
 
      SCF calculation:
 
-     electrons    :      0.57s CPU      0.65s WALL (       1 calls)
-     h_psi        :      0.42s CPU      0.47s WALL (     146 calls)
-     add_so_valen :      0.20s CPU      0.23s WALL (     454 calls)
-     add_so_Fnl   :      0.09s CPU      0.10s WALL (     146 calls)
+     electrons    :      3.87s CPU      4.05s WALL (       1 calls)
+     h_psi        :      3.18s CPU      3.31s WALL (     149 calls)
+     add_so_valen :      2.02s CPU      2.11s WALL (     462 calls)
+     add_so_Fnl   :      0.42s CPU      0.43s WALL (     149 calls)
 
      g-tensor:
 
-     compute_dudk :      0.04s CPU      0.04s WALL (       1 calls)
-     orbital_magn :      0.09s CPU      0.10s WALL (       1 calls)
+     compute_dudk :      0.15s CPU      0.15s WALL (       1 calls)
+     orbital_magn :      0.52s CPU      0.55s WALL (       1 calls)

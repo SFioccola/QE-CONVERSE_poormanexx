@@ -1,0 +1,45 @@
+&control
+    prefix = 'tif3'
+    calculation = 'scf'
+    restart_mode = 'from_scratch'
+    pseudo_dir = '../../pbe/pseudo/'
+    outdir = './scratch/'
+    tstress = .false.
+    tprnfor = .false.
+    verbosity = 'high'
+/
+&system
+    ibrav = 0
+    nat = 4
+    ntyp = 2
+    ecutwfc = 80
+    nspin = 2
+!    occupations = 'smearing'
+!    smearing = 'cold'
+!    degauss = 0.01
+    occupations  = 'fixed'
+    tot_magnetization = 1
+    nspin = 2
+    input_dft = 'pbe0'
+    exx_fraction = 0.20
+    ecutfock = 80
+/
+&electrons
+    diagonalization = 'david'
+    diago_thr_init = 1e-4
+    conv_thr = 1e-8
+/
+ATOMIC_SPECIES
+Ti  47.867     Ti.pbe-tm-gipaw-semi-dc.UPF 
+F   18.998     F.pbe-tm-new-gipaw-dc.UPF
+ATOMIC_POSITIONS (crystal)
+Ti            0.0000000000       -0.0000329100        0.0000000000
+F             0.0000000000        0.1787448095        0.0000000000
+F             0.1547105830       -0.0893559498        0.0000000000
+F            -0.1547105830       -0.0893559498        0.0000000000
+K_POINTS automatic
+1 1 1 0 0 0
+CELL_PARAMETERS angstrom
+     10.0000000000       0.0000000000       0.0000000000
+      0.0000000000      10.0000000000       0.0000000000
+      0.0000000000       0.0000000000      10.0000000000

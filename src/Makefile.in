@@ -42,6 +42,7 @@ CONVERSE_OBJS = electrons_gipaw.o \
 		orbital_magnetization.o \
                 calc_orbital_magnetization.o \
 		newscf.o \
+		non_scf_gipaw.o \
                 paw_gipaw.o \
 		qe-converse.o \
                 util.o

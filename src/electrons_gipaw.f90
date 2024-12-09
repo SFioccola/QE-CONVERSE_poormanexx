@@ -188,6 +188,7 @@ SUBROUTINE electrons_gipaw()
      !
      CALL electrons_scf_gipaw ( printout, exxen )
      !
+     RETURN
      IF ( .NOT. xclib_dft_is('hybrid') ) RETURN
      !
      ! ... From now on: hybrid DFT only

@@ -8,7 +8,7 @@ cart=("null" "x" "y" "z")
 
 for i in 1
 do
-for DIR in 1 
+for DIR in 1 2 3 
 do
 	base=${molecule}_${atoms[$i]}$i${cart[$DIR]}
 	cat > ${base}.in << EOF

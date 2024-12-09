@@ -61,7 +61,9 @@ MODULE gipaw_module
   ! strenght of spin-orbit
   REAL(DP) :: lambda_so(3)
 
-
+  ! exx + non_scf
+  LOGICAL :: exx_gipaw
+  LOGICAL :: non_scf
 
   ! max CPU time, in s
   REAL(dp) :: max_seconds

@@ -19,6 +19,7 @@
   ntyp = 2
   occupations = 'smearing'
   smearing = 'cold'
+  input_dft = 'XC-000I-000I-101L-130L-000I-000I'
   nspin = 2
   tot_magnetization = 0.0
 /

@@ -44,4 +44,4 @@ CELL_PARAMETERS hexagonal
 0.0000000       0.0000000       2.2000000
 
 K_POINTS automatic
-2 2 2   0 0 0
+1 1 1   0 0 0

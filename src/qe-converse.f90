@@ -72,7 +72,8 @@ PROGRAM qe_converse
                         verbosity, q_gipaw, dudk_method, &
                         diago_thr_init, conv_threshold, &
                         tr2, mixing_beta, assume_isolated, &
-                        lambda_so, m_0, m_0_atom
+                        lambda_so, m_0, m_0_atom, exx_gipaw, &
+                        non_scf
 
 ! begin with the initialization part                
 #if defined(__MPI)
@@ -102,6 +103,8 @@ if (.not. ionode .or. my_image_id > 0) goto 400
   tr2 = 1e-8
   lambda_so(:) = 0.d0
   m_0(:) = 0.d0
+  exx_gipaw = .false.
+  non_scf   = .false.
 
     read ( 5, input_qeconverse, iostat = ios )
   tmp_dir = outdir
@@ -196,6 +199,8 @@ SUBROUTINE gipaw_bcast_input
   CALL mp_bcast ( lambda_so, root, world_comm )
   CALL mp_bcast ( m_0, root, world_comm )
   CALL mp_bcast ( m_0_atom, root, world_comm )
+  CALL mp_bcast ( exx_gipaw, root, world_comm )
+  CALL mp_bcast ( non_scf, root, world_comm )
   CALL mp_bcast ( assume_isolated, root, world_comm )
 
 

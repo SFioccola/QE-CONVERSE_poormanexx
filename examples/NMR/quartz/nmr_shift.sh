@@ -1,8 +1,8 @@
 #!/bin/bash
 NAME="nmr"
-molecule=quartz
-natoms=4
-atoms=("null" "Si" "Si" "Si" "O")
+molecule=quartz_cov
+natoms=1
+atoms=("Si")
 cart=("null" "x" "y" "z")
 
 
@@ -21,7 +21,7 @@ do
         diagonalization = 'david'
         verbosity = 'high'
         q_gipaw = 0.01
-        dudk_method = 'covariant'
+        dudk_method = 'singlepoint'
         mixing_beta = 0.5
         lambda_so(1) = 0.0
         m_0(${DIR}) = 1.0
@@ -29,7 +29,7 @@ do
 /
 EOF
 
-mpirun -np 6 "your_path"/bin/qe-converse.x < ${base}.in > ${base}.out
+mpirun -np 6 /home/sfioccola/Desktop/test_singlepoint/QE-CONVERSE/bin/qe-converse.x < ${base}.in > ${base}.out
 
 done
 done

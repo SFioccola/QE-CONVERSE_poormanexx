@@ -34,7 +34,7 @@ SUBROUTINE newscf
   USE lsda_mod,   ONLY: nspin, current_spin
   USE orbital_magnetization, ONLY : dvrs
   USE wvfct,    ONLY : g2kin, nbndx, nbnd
-  USE gipaw_module, ONLY : conv_threshold, assume_isolated
+  USE gipaw_module, ONLY : conv_threshold, assume_isolated, exx_gipaw, non_scf
   USE mp_pools,        ONLY : intra_pool_comm, inter_pool_comm
   USE ener,                 ONLY : ef, ef_up, ef_dw, ef_cond
   USE martyna_tuckerman, ONLY : do_comp_mt
@@ -63,11 +63,13 @@ SUBROUTINE newscf
   doublegrid=.false.
   lmovecell=.false.
   iprint=10000
-!  read wfc and potential from preav scf. Generally is not suggested
-!  starting_wfc='file'  ! read wfc from preav. scf
-!  starting_pot='file'  ! read potential from preav scf
 ! Initialization of wfc
-  starting_wfc='atomic'
+  if ( exx_gipaw ) then !  read wfc and potential from preav scf EXX. 
+       starting_wfc='file'  ! read wfc from preav. scf
+       starting_pot='file'  ! read potential from preav scf
+  else
+      starting_wfc='atomic' ! Initialization of wfc
+  endif
   report=0
   CALL check_stop_init()
   CALL setup_para ( dfftp%nr3, 1, nbnd )
@@ -121,7 +123,11 @@ SUBROUTINE newscf
 
   call newd ( )
   call wfcinit_gipaw ( )
-  CALL electrons_gipaw ( )
+  if ( non_scf) then
+     call non_scf_gipaw( )
+  else
+     call electrons_gipaw ( )
+  endif
   ! 
   ! WARNING in NMR calculation : for non-metallic system (occupation='fixed') at least 1 unoccupied of Kohn-Sham states (nbnd) must be added
   !
