@@ -220,8 +220,7 @@ END SUBROUTINE dudk_covariant
 !-----------------------------------------------------------------------
 SUBROUTINE dudk_covariant_single_point(ik, occ, dudk)
   USE kinds,     ONLY : dp  
-  USE constants, ONLY : tpi 
-  USE cell_base, ONLY : bg, tpiba, at
+  USE cell_base, ONLY : bg, tpiba
   USE gvect,     ONLY : ngm, g
   USE klist,     ONLY : igk_k
   USE wvfct,     ONLY : npw, nbnd, npwx 
@@ -234,7 +233,6 @@ SUBROUTINE dudk_covariant_single_point(ik, occ, dudk)
   USE mp,               ONLY : mp_sum
   USE gipaw_module,     ONLY : evq
   USE io_files,         ONLY : nwordatwfc, iunsat, iunwfc, nwordwfc
-  USE io_global,        ONLY : stdout
   USE buffers,   ONLY : get_buffer, save_buffer
   implicit none
   complex(dp), external :: zdotc
@@ -244,9 +242,7 @@ SUBROUTINE dudk_covariant_single_point(ik, occ, dudk)
   integer :: ibnd, jbnd, ipol
   integer :: nls, nlm
   complex(dp), allocatable :: overlap(:,:)
-  complex(dp), allocatable :: tmp(:,:)
   real(dp) :: bmod, q_gipaw3(3)
-  complex(dp) :: bginv(3,3)
   
    
 !!! nls = dffts%nl
@@ -295,9 +291,7 @@ SUBROUTINE dudk_covariant_single_point(ik, occ, dudk)
 #endif
       call invert_matrix(occ, overlap) 
       ! 
-      bmod = sqrt( sum(bg(1:3,ipol)**2.d0) ) * tpiba
-      write(stdout,*) ipol, bmod/tpiba
-      bmod = 1
+      bmod = sqrt( sum(bg(1:3,ipol)**2.d0) ) * tpiba  
       !
       do ibnd = 1, occ
         do jbnd = 1, occ
@@ -311,21 +305,6 @@ SUBROUTINE dudk_covariant_single_point(ik, occ, dudk)
   enddo ! ipol
   deallocate(psir, aux, aux2, overlap)
 
-  ! make dudk cartesian
-  !bginv = bg
-  !call invert_matrix(3, bginv)
-  !bginv = real(bginv, dp) 
-  allocate(tmp(npw,3))
-  do ibnd = 1, occ
-     tmp = dudk(1:npw,ibnd,1:3)
-     do ipol = 1,3
-        bmod = sqrt( sum(bg(1:3,ipol)**2.d0) ) !* tpiba
-        !dudk(1:npw,ibnd,ipol) = ( bginv(1,ipol)*tmp(:,1) + bginv(2,ipol)*tmp(:,2) + bginv(3,ipol)*tmp(:,3) ) / tpiba
-        dudk(1:npw,ibnd,ipol) = ( at(ipol,1)*tmp(:,1) + at(ipol,2)*tmp(:,2) + at(ipol,3)*tmp(:,3) ) /tpiba 
-     enddo
-  enddo
-  deallocate(tmp)
-  
 END SUBROUTINE dudk_covariant_single_point
 
 
@@ -573,9 +552,10 @@ SUBROUTINE find_nbnd_occ(ik, nbnd_occ, emin, emax)
   real(dp), intent(out) :: emin, emax
   real(dp) :: small, xmax, fac, e_target
   integer :: ibnd
-
-  IF ( two_fermi_energies ) THEN
+  IF ( lgauss .or. ltetra ) THEN ! metallic case
+    IF ( two_fermi_energies ) THEN
      ef = (ef_up + ef_dw) / 2
+    ENDIF
   ENDIF
 
   if (lgauss) then ! metallic case
